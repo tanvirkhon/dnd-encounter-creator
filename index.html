@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <script src="https://kit.fontawesome.com/b0a3add849.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
     <title>DnD Encounter Maker</title>
 </head>
+
 <body>
-    <section class = "banner">
+
+    <header class = "banner">
         <nav class = "nav">
             <a href = "#How It Works">How It Works</a>
             <a href = "#Build Your Encounter">Build Your Encounter</a>
             <a href = "#My Encounters">My Encounters</a>
         </nav>
-    </section>
+    </header>
+
+    <div class="scene"></div>
+
     <div id="main-div">
         <ul id="list-monsters">
         </ul>
     </div>
 
     <section id="how-it-works">
-
         <div class="card-how-it-works">
             <h3> How It Works</h3>
             <i class="fa-solid fa-dice-d20"></i>
             <p>dummy text</p>
         </div>
-
+        
         <div class="card-how-it-works">
             <h3>Pick Your Monsters</h3>
             <i class="fa-brands fa-d-and-d"></i>
@@ -40,9 +46,9 @@
             <h3>Pick A Song</h3>
             <p>dummy text</p>
         </div>
-
     </section>
-
+    
+    <script type="module" src="./assets/3D-model.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
