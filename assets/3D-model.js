@@ -1,6 +1,7 @@
 /************************************************************************
  Variables for 3D setup
  ***********************************************************************/
+// Variables for dragon scene
 let container;
 let camera;
 let renderer;
@@ -25,13 +26,13 @@ function init() {
 
   // Camera Setup
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(-15, 10, 66);
+  camera.position.set(-15, 9, 72);
 
   // Lighting
   const ambient = new THREE.AmbientLight(0x404040, 1);
   scene.add(ambient);
 
-  const directionLighting = new THREE.DirectionalLight(0xffffff, 4);
+  const directionLighting = new THREE.DirectionalLight(0xffffff, 12);
   directionLighting.position.set(10, 10, 10);
   scene.add(directionLighting);
 
@@ -63,7 +64,6 @@ init();
 function onWindowResize() {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
-
   renderer.setSize(container.clientWidth, container.clientHeight);
 }
 
