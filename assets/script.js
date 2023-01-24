@@ -1,31 +1,47 @@
 /************************************************************************
  Variables
  ***********************************************************************/
-var mainDiv = document.getElementById("main-div");
-var listMonsters = document.getElementById("list-monsters");
+var encounterSection = document.getElementById("encounter-creator");
+var monsterCard = document.querySelector(".monster-card");
+var monsterImg = document.querySelector(".monster-img");
+var monsterTitle = document.querySelector(".monster-title");
+var monsterInfo = document.querySelector(".monster-info");
+var cardButton = document.querySelector(".card-button");
+
+var addMonsterBtn = document.getElementById("add-monster-btn");
+var addMonsterInput = document.getElementById("add-monster-input");
+var monsterList = document.getElementById("monster-list");
 
 /************************************************************************
  Functions
  ***********************************************************************/
-function getApi() {
-  var requestApi = "https://www.dnd5eapi.co/api/monsters";
 
+function addMonster(event) {
+  event.preventDefault();
+  console.log(addMonsterInput.value);
+
+  var requestApi =
+    "https://www.dnd5eapi.co/api/monsters/" + addMonsterInput.value;
+
+  console.log(requestApi);
   fetch(requestApi)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      //   for (var i = 0; i < data.count; i++) {
-      //     var listItem = document.createElement("li");
 
-      //     listItem.textContent = data.results[i].name;
-      //     listMonsters.appendChild(listItem);
-      //   }
+      var monsterCheck = document.createElement("input");
+      var monsterLabel = document.createTextNode(data.index);
+
+      monsterCheck.type = "checkbox";
+      monsterList.appendChild(monsterCheck);
+      monsterList.appendChild(monsterLabel);
     });
 }
 
 /************************************************************************
 Calls
  ***********************************************************************/
-getApi();
+
+addMonsterBtn.addEventListener("click", addMonster);

@@ -4,22 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/main.css">
-    <script src="https://kit.fontawesome.com/b0a3add849.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- <script src="https://kit.fontawesome.com/b0a3add849.js" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
     <title>DnD Encounter Maker</title>
 </head>
+
 <body>
-    <section class = "banner">
-        <nav class = "nav">
-            <a href = "#How It Works">How It Works</a>
-            <a href = "#Build Your Encounter">Build Your Encounter</a>
-            <a href = "#My Encounters">My Encounters</a>
+    
+    <header class = "banner">
+
+        <nav class="navbar has-shadow is-danger is-spaced" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <i class="fa-brands fa-d-and-d"></i>
+                    <h1 class="title is-4 has-text-warning">D&D ENCOUNTER CREATOR</h1>
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <a class="navbar-item" href = "#How It Works">How It Works</a>
+                <a class="navbar-item" href = "#Build Your Encounter">Build Your Encounter</a>
+                <a class="navbar-item" href = "#My Encounters">My Encounters</a>
+            </div>
         </nav>
+
+    </header>
+
+    <section id="hero-section">
+
+        <div class="scene hero-body"></div>
+        <div id="hero-text">
+            <h1 class="hero-h1">D&D Encounter Creator</h1>
+        </div>
+        <div class="stars"></div>
+        <div class="clouds"></div>
+        
+        <audio autoplay>
+            <source src="./assets/audio/DnD_Dragon_2.mp3" type="audio/mpeg">
+        </audio>
+
     </section>
-    <div id="main-div">
-        <ul id="list-monsters">
-        </ul>
-    </div>
+
+    <section id="encounter-creator">
+        
+        <form action="">
+            <h2> Build Your Encounter</h2>
+            <label for="">STEP 1: Add your Description</label>
+            <textarea class="textarea" name="encounter-information" id=""></textarea>
+
+            <label for="">STEP 2: Add your Monster</label>
+            <input id="add-monster-input" type="text" placeholder="Search Monster">
+            <button id="add-monster-btn">Add Monster</button>
+            <div id="monster-list"></div>
+
+            <label for="">STEP 3: Pick Music Theme</label>
+            <input type="text">
+            <br>
+            <button>Create Encounter</button>
+        </form>
+
+    </section>
+    
 
     <section id="how-it-works">
 
@@ -28,7 +76,7 @@
             <i class="fa-solid fa-dice-d20"></i>
             <p>dummy text</p>
         </div>
-
+        
         <div class="card-how-it-works">
             <h3>Pick Your Monsters</h3>
             <i class="fa-brands fa-d-and-d"></i>
@@ -40,9 +88,10 @@
             <h3>Pick A Song</h3>
             <p>dummy text</p>
         </div>
-
+        
     </section>
 
+    <script type="module" src="./assets/3D-model.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
