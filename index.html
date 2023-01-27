@@ -52,7 +52,7 @@
 
     </section>
     <section id="howitworks" class="bg-white dark:bg-gray-900">
-      <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+      <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 border-solid border-2 border-red-600">
           <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
               <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How It Works</h2>
               <p class="mb-4">Dummy text here</p>
@@ -77,43 +77,16 @@
             <button id="add-monster-btn">Add Monster</button>
             <div id="monster-list"></div>
 
+            <label for="">STEP 3: Pick Music Theme</label>
+            <input type="text">
+            <br>
             <button>Create Encounter</button>
         </form>
 
     </section>
-   
-    <section>
-      
-      <label>STEP 3: Pick A Music Theme</label>
-            <!-- list of buttons is given a id of Music-selection -->
-      <ul id="music-section">
-        <li>
-          <!-- each spotify-id is linked corresponding Podcast uri -->
-          <button data-spotify-id="spotify:episode:0qPtJThUzg7zRGz9JX6atj">
-            Tavern Ambience
-          </button>
-        </li>
-        <li>
-          <button data-spotify-id="spotify:episode:1Sa7j7ayN0arHwEXKaqfEd">
-            Windy / Snow Storm
-          </button>
-        </li>
-        <li>
-          <button data-spotify-id="spotify:episode:7vr1leetD3zT4TvJKnqowt">
-            Rain / Thunder Storm 
-          </button>
-        </li>
-        <li>
-          <button data-spotify-id="spotify:episode:4FWaT1rnPionNqc3qBCEVa">
-            Scary Night 
-          </button>
-        </li>
-      </ul>
-<!-- this div element is used for iframe's player -->
-      <div id="embed-iframe"></div>
 
+        
     </section>
-
     <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-left md:p-6 dark:bg-gray-800">
       <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"><a href="https://flowbite.com/" class="hover:underline"></a>
       </span>
@@ -122,12 +95,12 @@
               <a href="https://github.com/tanvirkhon/dnd-encounter-creator" class="mr-4 hover:underline md:mr-6 text-xl">GitHub</a>
           </li>
           
-    </footer>        
+          <li>
+
     <script type="module" src="./assets/3D-model.js"></script>
     <script src="./assets/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- added the iframe API script tag -->
-    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1"></script>
-    <script src="./assets/spotify.js"></script>
+    <!-- change client id and make it so it doesnt open up right away -->
+    <!-- <script src="./assets/spotify.js"></script> -->
 </body>
 </html>
