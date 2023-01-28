@@ -1,148 +1,147 @@
-
-
-
-
 @font-face {
-    font-family: Dragon-Lord;
-    src: url(../fonts/DragonlordPersonalUseOnlyRegular-PKxzm.otf);
+  font-family: Dragon-Lord;
+  src: url(../fonts/DragonlordPersonalUseOnlyRegular-PKxzm.otf);
 }
 /*************************************************************************
 Default Document Styling
 **************************************************************************/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family: sans-serif;
+body {
+  font-family: sans-serif;
 }
 
-header{
-    opacity: 92%;
-    position: fixed;
-    z-index: 100;
-    width: 100vw;
+header {
+  opacity: 88%;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
 }
 
-
-#hero-section{
-    padding-bottom: 25%;
+#hero-section {
+  padding-bottom: 25%;
 }
 
 /*************************************************************************
 3js Scene
 **************************************************************************/
-.scene{
-    background: url(../images/DnD_Background.jpg);
+.scene {
+  background: url(../images/DnD_Background.jpg);
 }
 
 .scene,
-canvas{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 }
 
-#hero-text{
-    padding-top: 30vh;
-    opacity: 89%;
+#hero-text {
+  padding-top: 30vh;
+  opacity: 97%;
+  width: 110vh;
 }
 
-.hero-h1{
-    color: #DC242C;
-    font-size: 8rem;
-    font-family: Dragon-Lord;
-    background-color: #F5A200;
-    width: 100vh;
-    border-top: 10px solid #664034;
-    border-bottom: 10px solid #664034;
-    border-right: 5px solid #664034;
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+.hero-h1 {
+  color: #dc242c;
+  font-size: 8rem;
+  font-family: Dragon-Lord;
+  background-color: #f5a200;
+  background-color: #dfdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23664034' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  border-top: 10px solid #f5a200;
+  border-bottom: 10px solid #f5a200;
+  border-right: 10px solid #f5a200;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.4), 20px 20px rgba(0, 0, 0, 0.3),
+    30px 30px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /*************************************************************************
 Clouds Optional
 **************************************************************************/
-.clouds{
-	width:600vw;
-	height: 110vh;
-	background: transparent url("../images/DnD_Clouds.png");
-	background-size: 1000px 1000px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    animation: move-background 100s linear infinite;
-    opacity: 75%;
+.clouds {
+  width: 600vw;
+  /* height: 100vh; */
+  background: transparent url("../images/DnD_Clouds.png");
+  /* background-size: 1000px 1000px; */
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  animation: move-background 100s linear infinite;
+  opacity: 75%;
 }
 .stars {
-    background: transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 0;
-    opacity: 90%;
+  background: transparent
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 90%;
 }
 
 @keyframes move-background {
-    from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  @-webkit-keyframes move-background {
-    from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-  
-  @-moz-keyframes move-background {    
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+}
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  
-      @-webkit-keyframes move-background {
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-
-/*************************************************************************
-Clouds Optional
-**************************************************************************/
-
-#encounter-creator{
-    padding-top: 50vh;
-    align-content: center;
 }
 
-form{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px;
-    background-color: #664034;
-    color: white;
-    width: 50%;
+@-moz-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+/*************************************************************************
+Encounter Creator
+**************************************************************************/
+
+#creator-section {
+  align-content: center;
+  padding-top: 10vh;
+}
+
+form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #664034;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23b3a8a4' fill-opacity='0.20' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
