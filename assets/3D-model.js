@@ -22,14 +22,14 @@ function init() {
   const fov = 35;
   const aspect = container.clientWidth / container.clientHeight;
   const near = 0.1;
-  const far = 500;
+  const far = 400;
 
   // Camera Setup
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(-15, 9, 72);
+  camera.position.set(-10, 10, 69);
 
   // Lighting
-  const ambient = new THREE.AmbientLight(0x404040, 1);
+  const ambient = new THREE.AmbientLight(0x404040, 5);
   scene.add(ambient);
 
   const directionLighting = new THREE.DirectionalLight(0xffffff, 12);
@@ -54,7 +54,7 @@ function init() {
 
 function animate() {
   requestAnimationFrame(animate);
-  dragon.rotation.z += 0.005;
+  dragon.rotation.z += 0.003;
   renderer.render(scene, camera);
 }
 

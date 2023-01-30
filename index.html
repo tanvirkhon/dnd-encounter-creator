@@ -7,14 +7,12 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.138.3/examples/js/loaders/GLTFLoader.min.js"></script>
-    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1"></script>
     <title>DnD Encounter Maker</title>
   </head>
 
   <body>
     <header>
-      <nav
-        class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+      <nav class="px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
         <div class="container flex flex-wrap items-center justify-left mx-auto">
           <img
             src=".\assets\images\Dnd_Dice.png"
@@ -41,24 +39,24 @@
           </button>
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
-              class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <a
-                  href="#how-it-works"
+                  href="#howitworks-section"
                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >How It Works</a
                 >
               </li>
               <li>
                 <a
-                  href="#encounter-creator"
+                  href="#creator-section"
                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >Create Your Encounter</a
                 >
               </li>
               <li>
                 <a
-                  href="#my-encounters"
+                  href="#encounter-section"
                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >My Encounters</a
                 >
@@ -69,13 +67,15 @@
       </nav>
     </header>
 
-    <section id="hero-section" class="max-w-md">
-      <div class="scene hero-body"></div>
-      <div id="hero-text">
-        <h1 class="hero-h1">D&D Encounter Creator</h1>
+    <section id="hero-section" class="">
+      <div class="hero-body">
+        <div class="scene"></div>
+        <div id="hero-text">
+          <h1 class="hero-h1">D&D Encounter Creator</h1>
+        </div>
+        <div class="stars"></div>
+        <div class="clouds"></div>
       </div>
-      <div class="stars"></div>
-      <div class="clouds"></div>
 
       <!-- <audio autoplay>
         <source src="./assets/audio/DnD_Dragon_2.mp3" type="audio/mpeg" />
@@ -83,8 +83,10 @@
     </section>
 
     <section id="howitworks-section" class="text-grey-600 body-font">
-      <div class="container px-5 py-24 mx-auto flex bg-gray-100">
-        <div class="lg:w-1/2 w-full mb-10 lg:mb-0 overflow-hidden">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap bg-gray-100">
+        <div class="lg:w-1/2 w-full mb-10 overflow-hidden">
+          <h2 class="text-5xl font-extrabold text-black">How it Works</h2>
+          <br>
           <img
             class="h-full w-full"
             src=".\assets\images\Dnd_Hero.jpg"
@@ -94,47 +96,18 @@
           class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
           <div class="flex flex-col mb-10 lg:items-start items-center">
             <div
-              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-100 text-yellow-500 mb-5">
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-300 text-yellow-500 mb-5">
               <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-6 h-6"
-                viewBox="0 0 24 24">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-            </div>
-            <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
-                Name Your Encounter
-              </h2>
-              <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col mb-10 lg:items-start items-center">
-            <div
-              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-100 text-yellow-500 mb-5">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-6 h-6"
-                viewBox="0 0 24 24">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
+                class="motion-safe:animate-bounce w-12 h-12"
+                viewBox="0 0 512 512"
+                fill="none">
                 <path
-                  d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                  d="M311.9 47.9502C294.3 47.9502 277.3 48.6502 261.2 50.3802L244.6 93.5002L239.7 53.4602C237.2 53.9202 234.7 54.4002 232.2 54.9302C223.1 56.8702 217.1 62.1502 211.9 69.8002C206.7 77.4502 203 87.3002 199.8 96.4002C191 121.5 184 148 178.4 175C184.4 180.1 190.4 185.3 196.3 190.4L227 172.8L260.8 198.9L312.7 179.2L373.7 203.7L366.9 220.4L312.5 198.6L257.8 219.3L225.6 194.4L210.7 202.9C230.3 220.2 249.3 237.3 267.2 254.1L281.2 247.7L315.1 263.8L346.3 250.7L370.5 274L358.1 287L342.3 271.9L314.7 283.6L281.7 267.8C288.6 274.5 295.3 281 301.8 287.5L303.5 289.3L323 365.6L315.2 359.9L262.2 360.3L224.1 342.5L181.7 357.1L175.9 340.1L225.1 323.1L266.2 342.3L290.9 342.1L220.2 290.4C200.5 295 180.8 293.2 162.1 286.7C157.9 331.1 156.2 372.4 155.1 405.4C154.7 416.1 157.8 428.4 162.6 437.9C167.5 447.4 174.3 453.3 177.6 454C182.8 455.2 196.6 457.2 215.3 459.1L227.7 420.1L246.8 461.8C263.5 463 281.8 463.8 300.3 464C328.5 464.3 357.4 463.1 382.3 459.3C398.1 457 411.9 453.3 423 448.9C411.2 443.8 401.4 438.3 393.9 432.3C382.8 423.4 375.7 413 376.6 401.4V401.6C382 305.2 387.4 212.8 406.9 115.6L407 115.2L407.1 114.8C412.4 96.9002 425 74.9402 443.2 58.9702C429.3 56.9102 414.6 54.9702 399.5 53.3102L377.2 78.6102L375 50.9102C356 49.2702 336.6 48.2002 317.6 47.9902H311.9V47.9502ZM460.4 68.3902C455.7 72.0802 451.2 76.4202 447.1 81.1202C459.2 89.3002 468.5 104.5 468.9 118.1C469.2 125.9 467 133 461.2 139.5C455.4 145.9 445.6 151.9 429.6 155.3L433.4 172.9C452 168.9 465.7 161.4 474.6 151.5C483.6 141.6 487.3 129.3 486.9 117.5C486.3 98.2002 475.8 79.9102 460.4 68.3902ZM25.44 71.9102C25.2 73.5202 25.06 75.3402 25.06 77.5302C25.16 85.2202 27.09 95.7002 30.89 107.7C34.3 118.4 39.16 130.2 45.24 142.5C55.87 137.2 65.83 131.5 73.65 124.4C69.23 136.9 63.5 149.1 55.05 160.9C59.19 168.1 63.68 175.3 68.5 182.4C79.14 177.1 89.22 169.4 98.02 156.3C94.72 172.3 89.55 186.9 79.75 198.1C86.28 206.6 93.25 214.9 100.5 222.6C109.2 213.3 116.1 201.6 121.2 187.7C125 206.2 123.8 223 115.5 237.1C123.5 244.3 131.8 250.8 140.3 256.2C146.4 242.2 149.2 225.6 148.8 206.5C158 230.2 160.1 249.4 158.4 266C178.6 275.2 199.2 278 219.7 272.1L223.9 270.8L293.2 321.4L287.3 298.6C214.3 225.8 111.9 141.9 25.44 71.9102ZM312.8 123.9L346 137.7L377.3 127.8L382.7 145L345.2 156.9L311.6 142.9L282.8 151L278 133.6L312.8 123.9ZM420.1 360.1C419.4 360.1 418.8 360.2 418.1 360.2C414.6 360.3 410.9 360.7 407 361.5L410.4 379.1C422.6 376.8 430.4 378.7 434.9 381.6C439.3 384.5 441.2 388.4 441.3 394.1C441.4 403.4 434.3 417.1 418 426.6C423.4 429.5 429.9 432.5 437.3 435.3C451.7 423.7 459.4 408.5 459.3 393.9C459.2 383.2 454.1 372.7 444.7 366.5C438 362.2 429.7 360 420.1 360.1Z"
+                  fill="black" />
               </svg>
             </div>
             <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+              <h2 class="text-gray-900 text-lg title-font font-bold mb-3">
                 Write Your Encounter
               </h2>
               <p class="leading-relaxed text-base">
@@ -145,22 +118,44 @@
           </div>
           <div class="flex flex-col mb-10 lg:items-start items-center">
             <div
-              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-100 text-yellow-500 mb-5">
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-300 text-yellow-500 mb-5">
               <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-6 h-6"
-                viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
+                class="motion-safe:animate-bounce w-12 h-12"
+                viewBox="0 0 512 512"
+                fill="none">
+                <path
+                  d="M188.284 22.22L146.722 64.063L209.597 93.906L201.597 110.781L132.752 78.126L60.8479 150.53L94.1579 247.5L151.034 240.344L161.564 197.874L179.69 202.344L133.847 387.594L189.157 337.938L199.157 328.938L204.097 341.438L218.907 378.968L250.157 337.344L258.283 326.5L265.533 337.97L295.939 386.187L318.596 339.437L323.688 328.937L332.813 336.187L395.345 385.969L332.531 203.749L350.187 197.655L362.969 234.718L423.531 233.778L450.001 131.904L377.281 69.56L307.156 108.404L298.096 92.029L362.126 56.561L332.376 31.031L188.282 22.218L188.284 22.22ZM378.972 107.72L392.252 174.938L284.972 158.688L378.972 107.718V107.72ZM132.784 108.656L230.848 160L114.598 173.47L132.784 108.656ZM255.972 231.156L311.816 295.906L275.566 308.781L258.159 266.126L242.785 309.47L207.441 295.906L255.973 231.156H255.972ZM330.316 358.094L305.408 409.47L298.066 424.625L289.096 410.375L256.972 359.405L223.816 403.595L213.753 416.937L207.628 401.407L191.658 360.813L161.222 388.125L186.752 454.531L248.159 489.751L346.973 450.188L363.91 384.845L330.318 358.095L330.316 358.094Z"
+                  fill="black" />
               </svg>
             </div>
             <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
-                Add Your Monster
+              <h2
+                class="text-gray-900 font-bold text-lg title-font font-bold mb-3">
+                Add Your Monsters
+              </h2>
+              <p class="leading-relaxed text-base">
+                Every Dungeons and Dragons encounter needs a some big scary
+                monsters to fight. Go wild, search and add any monster from the
+                DnD 5e rule set. <br />
+                Be warned though, your adventures might hate you for it!
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col mb-10 lg:items-start items-center">
+            <div
+              class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-300 text-yellow-500 mb-5">
+              <svg
+                class="motion-safe:animate-bounce w-12 h-12"
+                viewBox="0 0 512 512"
+                fill="none">
+                <path
+                  d="M188.284 22.22L146.722 64.063L209.597 93.906L201.597 110.781L132.752 78.126L60.8479 150.53L94.1579 247.5L151.034 240.344L161.564 197.874L179.69 202.344L133.847 387.594L189.157 337.938L199.157 328.938L204.097 341.438L218.907 378.968L250.157 337.344L258.283 326.5L265.533 337.97L295.939 386.187L318.596 339.437L323.688 328.937L332.813 336.187L395.345 385.969L332.531 203.749L350.187 197.655L362.969 234.718L423.531 233.778L450.001 131.904L377.281 69.56L307.156 108.404L298.096 92.029L362.126 56.561L332.376 31.031L188.282 22.218L188.284 22.22ZM378.972 107.72L392.252 174.938L284.972 158.688L378.972 107.718V107.72ZM132.784 108.656L230.848 160L114.598 173.47L132.784 108.656ZM255.972 231.156L311.816 295.906L275.566 308.781L258.159 266.126L242.785 309.47L207.441 295.906L255.973 231.156H255.972ZM330.316 358.094L305.408 409.47L298.066 424.625L289.096 410.375L256.972 359.405L223.816 403.595L213.753 416.937L207.628 401.407L191.658 360.813L161.222 388.125L186.752 454.531L248.159 489.751L346.973 450.188L363.91 384.845L330.318 358.095L330.316 358.094Z"
+                  fill="black" />
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-bold mb-3">
+                Find the Right Mood
               </h2>
               <p class="leading-relaxed text-base">
                 Blue bottle crucifix vinyl post-ironic four dollar toast vegan
@@ -177,29 +172,35 @@
       <div class="container">
         <form class="" action="">
           <div class="flex flex-wrap -mx-3 mb-6">
-            <h2 class="font-medium text-4xl">Build Your Encounter</h2>
+            <h2 class="text-5xl font-extrabold text-white">Build Your Encounter</h2>
           </div>
 
+          <!-- Write your Encounter -->
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
               <textarea
                 class="textarea no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                 name="encounter-information"
-                id=""></textarea>
+                id="encounter-textarea"></textarea>
             </div>
           </div>
 
-          <div class="search-container flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3">
-              <input
+          <!-- Find and add your monster -->
+          <div class="search-container -mx-3 mb-6">
+            <div class="flex w-full px-3">
+              <select
                 id="add-monster-input"
                 class="autocomplete-input focus:bg-white"
                 type="text"
-                placeholder="Search for a Monster" />
-              <ul id="monster-list" class="autocomplete-list"></ul>
+                placeholder="Search for a Monster">
+                <option value="awakened-tree">Awakened Tree</option>
+                <option value="axe-beak">Axe Beak</option>
+                <option value="aboleth">Aboleth</option>
+              </select>
+
               <button
                 id="add-monster-btn"
-                class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
                 Add Monster
               </button>
             </div>
@@ -207,6 +208,62 @@
 
           <div class="flex flex-wrap -mx-3 mb-6">
             <div id="monster-list" class="w-full px-3"></div>
+          </div>
+
+          <!-- Add Monster to a table -->
+          <div class="rounded-lg border border-gray-200 shadow-md">
+            <table
+              id="monster-table"
+              class="w-full border-collapse bg-white text-left text-s text-gray-500">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                    Monster Name
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                    Hit Points
+                  </th>
+                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                    Armour Class
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+                <tr id="table-body" class="">
+                  <!-- <th
+                    class="flex gap-2 px-6 py-4 font-normal text-gray-900"></th>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-s font-semibold text-red-600">
+                      50
+                    </span>
+                  </td> -->
+                  <!-- <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600">
+                      15
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600">
+                      15
+                    </span>
+                  </td> -->
+                  <!-- <td class="px-6 py-4">
+                    <div class="flex justify-end gap-4">
+                      <button
+                        id="create-encounter"
+                        class="shadow bg-red-400 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        type="button">
+                        Remove
+                      </button>
+                    </div>
+                  </td>
+                </tr> -->
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="flex flex-wrap -mx-3 mb-6 justify-center">
@@ -224,35 +281,62 @@
     <!-- Encounter Section -->
     <section id="encounter-section">
       <div class="grid grid-rows-3 grid-flow-col gap-4">
-        <div class="row-span-6 bg-yellow-400">
-          <h3>Encounter Description</h3>
+        <div id="encounter-info" class="row-span-6 bg-yellow-400">
+          <h3 class="text-4xl font-extrabold text-black">My Encounter</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+            beatae culpa, voluptatem distinctio sapiente earum. Ullam modi
+            dignissimos, autem consequuntur ipsum excepturi totam cupiditate
+            nesciunt aspernatur fuga neque commodi inventore! Lorem, ipsum dolor
+            sit amet consectetur adipisicing elit. Itaque assumenda fugiat,
+            nesciunt culpa provident nostrum soluta a temporibus, velit eligendi
+            recusandae, enim blanditiis quidem magnam modi quae iusto fugit
+            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+            dignissimos placeat saepe eveniet dolorem veniam accusamus similique
+            aliquid ipsum, doloribus accusantium velit at ullam in debitis,
+            sequi nobis maxime numquam!
+          </p>
         </div>
-        <div class="col-span-1 row-span-6 bg-yellow-100">
+        <table id="encounter-section-table"></table>
+        <!-- <div id="monster-info" class="col-span-1 row-span-6 bg-yellow-100">
           <h3>Monsters</h3>
-        </div>
+        </div> -->
       </div>
+
       <div class="row-span-2 col-span-2 bg-yellow-900" id="spotify-player">
-        <label>STEP 3: Pick A Music Theme</label>
         <!-- list of buttons is given a id of Music-selection -->
+        <h2 class="text-4xl font-extrabold text-white">Pick Your Mood</h2>
         <ul id="music-section">
           <li>
             <!-- each spotify-id is linked corresponding Podcast uri -->
-            <button data-spotify-id="spotify:episode:0qPtJThUzg7zRGz9JX6atj">
+            <button
+              id="tavern-music-btn"
+              data-spotify-id="spotify:episode:0qPtJThUzg7zRGz9JX6atj"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
               Tavern Ambience
             </button>
           </li>
           <li>
-            <button data-spotify-id="spotify:episode:1Sa7j7ayN0arHwEXKaqfEd">
+            <button
+              id="snow-music-btn"
+              data-spotify-id="spotify:episode:3BQM1oEahHsgwVrwQBI2Np"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
               Windy / Snow Storm
             </button>
           </li>
           <li>
-            <button data-spotify-id="spotify:episode:7vr1leetD3zT4TvJKnqowt">
+            <button
+              id="rain-music-btn"
+              data-spotify-id="spotify:episode:08HkSrXiLtwU2IcIO054Nu"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
               Rain / Thunder Storm
             </button>
           </li>
           <li>
-            <button data-spotify-id="spotify:episode:4FWaT1rnPionNqc3qBCEVa">
+            <button
+              id="scary-music-btn"
+              data-spotify-id="spotify:episode:4FWaT1rnPionNqc3qBCEVa"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
               Scary Night
             </button>
           </li>
@@ -263,12 +347,13 @@
     </section>
 
     <footer
-      class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-left md:p-6 dark:bg-gray-800"></footer>
+      class="p-4 bg-black shadow md:flex md:items-center md:justify-left md:p-6 dark:bg-gray-800"></footer>
 
     <script type="module" src="./assets/3D-model.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- added the iframe API script tag -->
     <script src="./assets/spotify.js"></script>
+    <script src="https://open.spotify.com/embed-podcast/iframe-api/v1"></script>
     <script src="./assets/script.js"></script>
   </body>
 </html>

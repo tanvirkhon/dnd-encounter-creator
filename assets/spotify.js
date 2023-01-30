@@ -2,7 +2,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     var element = document.getElementById('embed-iframe');
     var options = {
         width: '60%',
-        height: '200',
+        height: '300',
         uri: 'spotify:episode:0qPtJThUzg7zRGz9JX6atj'
       };
     var callback = (EmbedController) => {
