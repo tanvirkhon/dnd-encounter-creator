@@ -16,7 +16,8 @@ var snowMusicBtn = document.getElementById("snow-music-btn");
 var tavernMusicBtn = document.getElementById("tavern-music-btn");
 var rainMusicBtn = document.getElementById("rain-music-btn");
 var scaryMusicBtn = document.getElementById("scary-music-btn");
-
+var campMusicBtn = document.getElementById("camp-music-btn")
+var bossMusicBtn = document.getElementById("boss-music-btn")
 /************************************************************************
  Functions
  ***********************************************************************/
@@ -178,7 +179,6 @@ function changeBgBoss(event) {
   event.preventDefault();
   spotifyPlayer.style.backgroundImage = "url(./assets/images/DnD_Boss.jpg)";
 }
-
 
 function createEncounter() {
   var encounterInfo = document.getElementById("encounter-textarea").value;
