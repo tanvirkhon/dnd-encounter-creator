@@ -17,7 +17,8 @@ var snowMusicBtn = document.getElementById("snow-music-btn");
 var tavernMusicBtn = document.getElementById("tavern-music-btn");
 var rainMusicBtn = document.getElementById("rain-music-btn");
 var scaryMusicBtn = document.getElementById("scary-music-btn");
-
+var campMusicBtn = document.getElementById("camp-music-btn")
+var bossMusicBtn = document.getElementById("boss-music-btn")
 /************************************************************************
  Functions
  ***********************************************************************/
@@ -100,6 +101,16 @@ function changeBgScary(event) {
   spotifyPlayer.style.backgroundImage = "url(./assets/images/DnD_Scary.png)";
 }
 
+function changeBgCamp(event) {
+  event.preventDefault();
+  spotifyPlayer.style.backgroundImage = "url(./assets/images/DnD_Camp.jpg)";
+}
+
+function changeBgBoss(event) {
+  event.preventDefault();
+  spotifyPlayer.style.backgroundImage = "url(./assets/images/DnD_Boss.jpg)";
+}
+
 function createEncounter() {
   var encounterInfo = document.getElementById("encounter-textarea").value;
   console.log(encounterInfo);
@@ -133,3 +144,5 @@ snowMusicBtn.addEventListener("click", changeBgSnow);
 tavernMusicBtn.addEventListener("click", changeBgTavern);
 rainMusicBtn.addEventListener("click", changeBgRain);
 scaryMusicBtn.addEventListener("click", changeBgScary);
+campMusicBtn.addEventListener("click", changeBgCamp);
+bossMusicBtn.addEventListener("click", changeBgBoss);
