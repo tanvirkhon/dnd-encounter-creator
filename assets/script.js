@@ -5,7 +5,9 @@ var encounterSection = document.getElementById("encounter-creator");
 var addMonsterBtn = document.getElementById("add-monster-btn");
 var addMonsterInput = document.getElementById("add-monster-input");
 var monsterList = document.getElementById("monster-list");
+var mainMonsterTable = document.getElementById("monster-table");
 var monsterTable = document.getElementById("table-body");
+var encounterSectionTable = document.getElementById("encounter-section-table");
 
 // Save Encounter Button
 var createEncounterBtn = document.getElementById("create-encounter");
@@ -16,8 +18,8 @@ var snowMusicBtn = document.getElementById("snow-music-btn");
 var tavernMusicBtn = document.getElementById("tavern-music-btn");
 var rainMusicBtn = document.getElementById("rain-music-btn");
 var scaryMusicBtn = document.getElementById("scary-music-btn");
-var campMusicBtn = document.getElementById("camp-music-btn")
-var bossMusicBtn = document.getElementById("boss-music-btn")
+var campMusicBtn = document.getElementById("camp-music-btn");
+var bossMusicBtn = document.getElementById("boss-music-btn");
 /************************************************************************
  Functions
  ***********************************************************************/
@@ -69,7 +71,7 @@ function addMonster(event) {
       var monsterTableHeader = document.createElement("th");
       monsterTableHeader.classList =
         "flex gap-2 px-6 py-4 font-normal text-gray-900";
-      monsterTable.appendChild(monsterTableHeader);
+      monsterTableRow.appendChild(monsterTableHeader);
 
       // Create Monster Img Div
       var monsterImgDiv = document.createElement("div");
@@ -97,34 +99,34 @@ function addMonster(event) {
       // Add Monster Health
       var monsterHealthTd = document.createElement("td");
       monsterHealthTd.classList = "px-6 py-4";
-      monsterTable.appendChild(monsterHealthTd);
+      monsterTableRow.appendChild(monsterHealthTd);
 
       // Add Hit Points
       var monsterHealthSpan = document.createElement("span");
       monsterHealthSpan.classList =
         "inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-s font-semibold text-red-600";
-      monsterHealthSpan.append(data.hit_points);
+      monsterHealthSpan.append("HP: " + data.hit_points);
       monsterHealthTd.appendChild(monsterHealthSpan);
 
       // Add Monster Armor
       var monsterArmorTd = document.createElement("td");
       monsterArmorTd.classList = "px-6 py-4";
-      monsterTable.appendChild(monsterArmorTd);
+      monsterTableRow.appendChild(monsterArmorTd);
 
       // Add Hit Points
       var monsterArmorSpan = document.createElement("span");
       monsterArmorSpan.classList =
         "inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600";
-      monsterArmorSpan.append(data.constitution);
+      monsterArmorSpan.append("AC: " + data.constitution);
       monsterArmorTd.appendChild(monsterArmorSpan);
 
       // Add Button to Delete
       var monsterBtnTd = document.createElement("td");
       monsterBtnTd.classList = "px-6 py-4";
-      monsterTable.appendChild(monsterBtnTd);
+      monsterTableRow.appendChild(monsterBtnTd);
 
       var monsterBtnDiv = document.createElement("div");
-      monsterBtnDiv.classList = "flex justify-end gap-4";
+      monsterBtnDiv.classList = "flex justify-center";
       monsterBtnTd.appendChild(monsterBtnDiv);
 
       var monsterBtnMain = document.createElement("button");
@@ -138,12 +140,13 @@ function addMonster(event) {
 // Delete Monster Row
 function deleteBtn(event) {
   event.preventDefault();
-  if (event.target.matches(".delete-btn")) {
+  if (!event.target.classList.contains("delete-btn")) {
     console.log("Delete");
-    monsterTable.remove();
+    return;
   }
+  const btn = event.target;
+  btn.closest("tr").remove();
 }
-monsterTable.addEventListener("click", deleteBtn);
 
 /************************************************************************
 Spotify Buttons
@@ -200,6 +203,9 @@ function createEncounter() {
 /************************************************************************
 Calls
 ***********************************************************************/
+// Event Listener for delete Monster From Table
+mainMonsterTable.addEventListener("click", deleteBtn);
+encounterSectionTable.addEventListener("click", deleteBtn);
 
 // Add Monster Eventlistener
 addMonsterBtn.addEventListener("click", addMonster);

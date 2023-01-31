@@ -19,7 +19,7 @@
         <div class="container flex flex-wrap items-center justify-left mx-auto">
           <img
             src=".\assets\images\Dnd_Dice.png"
-            class="h-6 mr-3 sm:h-9"
+            class="h-6 mr-3 sm:h-9 hover:animate-spin"
             alt="D20 dice" />
           <button
             data-collapse-toggle="navbar-default"
@@ -46,21 +46,21 @@
               <li>
                 <a
                   href="#howitworks-section"
-                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
+                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >How It Works</a
                 >
               </li>
               <li>
                 <a
                   href="#creator-section"
-                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
+                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >Create Your Encounter</a
                 >
               </li>
               <li>
                 <a
                   href="#encounter-section"
-                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
+                  class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent text-2xl"
                   >My Encounters</a
                 >
               </li>
@@ -70,14 +70,18 @@
       </nav>
     </header>
 
-    <section id="hero-section" class="">
+    <section id="hero-section">
       <div class="hero-body">
         <div class="scene"></div>
+        <div class="stars"></div>
+        <div class="clouds"></div>
         <div id="hero-text">
           <h1 class="hero-h1">D&D Encounter Creator</h1>
         </div>
-        <div class="stars"></div>
-        <div class="clouds"></div>
+        <img
+          src="./assets/images/Dnd_Dice.png"
+          class="motion-safe:animate-bounce hover:animate-spin"
+          alt="D20 dice" />
       </div>
 
       <!-- <audio autoplay>
@@ -103,7 +107,7 @@
             <div
               class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-300 text-yellow-500 mb-5">
               <svg
-                class="motion-safe:animate-bounce w-12 h-12"
+                class="animate-bounce w-12 h-12"
                 viewBox="0 0 512 512"
                 fill="none">
                 <path
@@ -115,7 +119,11 @@
               <h2 class="text-gray-900 text-lg title-font font-bold mb-3">
                 Write Your Encounter
               </h2>
-              <p class="leading-relaxed text-base">Write a short description for your encounter, such as adding a plot description or context for the fight to make it stand out from the rest</p>
+              <p class="leading-relaxed text-base">
+                Write a short description for your encounter, such as adding a
+                plot description or context for the fight to make it stand out
+                from the rest
+              </p>
             </div>
           </div>
           <div class="flex flex-col mb-10 lg:items-start items-center">
@@ -148,10 +156,12 @@
               class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-yellow-300 text-yellow-500 mb-5">
               <svg
                 class="motion-safe:animate-bounce w-12 h-12"
-                viewBox="0 0 512 512"
+                width="70"
+                height="59"
+                viewBox="0 0 80 59"
                 fill="none">
                 <path
-                  d="M188.284 22.22L146.722 64.063L209.597 93.906L201.597 110.781L132.752 78.126L60.8479 150.53L94.1579 247.5L151.034 240.344L161.564 197.874L179.69 202.344L133.847 387.594L189.157 337.938L199.157 328.938L204.097 341.438L218.907 378.968L250.157 337.344L258.283 326.5L265.533 337.97L295.939 386.187L318.596 339.437L323.688 328.937L332.813 336.187L395.345 385.969L332.531 203.749L350.187 197.655L362.969 234.718L423.531 233.778L450.001 131.904L377.281 69.56L307.156 108.404L298.096 92.029L362.126 56.561L332.376 31.031L188.282 22.218L188.284 22.22ZM378.972 107.72L392.252 174.938L284.972 158.688L378.972 107.718V107.72ZM132.784 108.656L230.848 160L114.598 173.47L132.784 108.656ZM255.972 231.156L311.816 295.906L275.566 308.781L258.159 266.126L242.785 309.47L207.441 295.906L255.973 231.156H255.972ZM330.316 358.094L305.408 409.47L298.066 424.625L289.096 410.375L256.972 359.405L223.816 403.595L213.753 416.937L207.628 401.407L191.658 360.813L161.222 388.125L186.752 454.531L248.159 489.751L346.973 450.188L363.91 384.845L330.318 358.095L330.316 358.094Z"
+                  d="M50.5 0H0.5V8.33333H50.5V0ZM50.5 16.6667H0.5V25H50.5V16.6667ZM0.5 41.6667H33.8333V33.3333H0.5V41.6667ZM58.8333 0V34.0833C57.5417 33.625 56.125 33.3333 54.6667 33.3333C47.75 33.3333 42.1667 38.9167 42.1667 45.8333C42.1667 52.75 47.75 58.3333 54.6667 58.3333C61.5833 58.3333 67.1667 52.75 67.1667 45.8333V8.33333H79.6667V0H58.8333Z"
                   fill="black" />
               </svg>
             </div>
@@ -160,7 +170,8 @@
                 Find the Right Mood
               </h2>
               <p class="leading-relaxed text-base">
-                Pick a song or playlist to play during the encounter to add that extra musical flair to a pivotal battle or boss fight
+                Pick a song or playlist to play during the encounter to add that
+                extra musical flair to a pivotal battle or boss fight
               </p>
             </div>
           </div>
@@ -169,12 +180,12 @@
     </section>
 
     <!-- Encounter Creator -->
-    <section class="" id="creator-section">
+    <section id="creator-section">
       <div class="container">
-        <form class="" action="">
+        <form action="">
           <div class="flex flex-wrap -mx-3 mb-6">
             <h2 class="text-5xl font-extrabold text-white">
-              Build Your Encounter
+              Build Your Encounter:
             </h2>
           </div>
 
@@ -199,14 +210,10 @@
 
               <button
                 id="add-monster-btn"
-                class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">
+                class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
                 Add Monster
               </button>
             </div>
-          </div>
-
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div id="monster-list" class="w-full px-3"></div>
           </div>
 
           <!-- Add Monster to a table -->
@@ -214,19 +221,6 @@
             <table
               id="monster-table"
               class="w-full border-collapse bg-white text-left text-s text-gray-500">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                    Monster Name
-                  </th>
-                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                    Hit Points
-                  </th>
-                  <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                    Armour Class
-                  </th>
-                </tr>
-              </thead>
               <tbody
                 id="table-body"
                 class="divide-y divide-gray-100 border-t border-gray-100">
