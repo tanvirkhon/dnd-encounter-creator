@@ -18,7 +18,6 @@ var rainMusicBtn = document.getElementById("rain-music-btn");
 var scaryMusicBtn = document.getElementById("scary-music-btn");
 var campMusicBtn = document.getElementById("camp-music-btn");
 var bossMusicBtn = document.getElementById("boss-music-btn");
-
 /************************************************************************
  Functions
  ***********************************************************************/
