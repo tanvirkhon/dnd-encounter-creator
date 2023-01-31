@@ -88,7 +88,9 @@
     <section id="howitworks-section" class="text-grey-600 body-font">
       <div class="container px-5 py-24 mx-auto flex flex-wrap bg-gray-100">
         <div class="lg:w-1/2 w-full mb-10 overflow-hidden">
-          <h2 class="text-5xl font-medium text-black"> <span class="medieval-text">How</span> it Works</h2>
+          <h2 class="text-5xl font-medium text-black">
+            <span class="medieval-text">How</span> it Works
+          </h2>
           <br />
           <img
             class="h-full w-full"
@@ -114,8 +116,9 @@
                 Write Your Encounter
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+                Write a short description for your encounter, such as adding a
+                plot description or context for the fight to make it stand out
+                from the rest
               </p>
             </div>
           </div>
@@ -197,11 +200,7 @@
                 id="add-monster-input"
                 class="autocomplete-input focus:bg-white"
                 type="text"
-                placeholder="Search for a Monster">
-                <option value="awakened-tree">Awakened Tree</option>
-                <option value="axe-beak">Axe Beak</option>
-                <option value="aboleth">Aboleth</option>
-              </select>
+                placeholder="Search for a Monster"></select>
 
               <button
                 id="add-monster-btn"
@@ -233,40 +232,10 @@
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                <tr id="table-body" class="">
-                  <!-- <th
-                    class="flex gap-2 px-6 py-4 font-normal text-gray-900"></th>
-                  <td class="px-6 py-4">
-                    <span
-                      class="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-s font-semibold text-red-600">
-                      50
-                    </span>
-                  </td> -->
-                  <!-- <td class="px-6 py-4">
-                    <span
-                      class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600">
-                      15
-                    </span>
-                  </td>
-                  <td class="px-6 py-4">
-                    <span
-                      class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600">
-                      15
-                    </span>
-                  </td> -->
-                  <!-- <td class="px-6 py-4">
-                    <div class="flex justify-end gap-4">
-                      <button
-                        id="create-encounter"
-                        class="shadow bg-red-400 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                        type="button">
-                        Remove
-                      </button>
-                    </div>
-                  </td>
-                </tr> -->
-                </tr>
+              <tbody
+                id="table-body"
+                class="divide-y divide-gray-100 border-t border-gray-100">
+                <tr class=""></tr>
               </tbody>
             </table>
           </div>
@@ -287,25 +256,14 @@
     <section id="encounter-section">
       <div class="grid grid-rows-3 grid-flow-col gap-4">
         <div id="encounter-info" class="row-span-6 bg-yellow-400">
-          <h3 class="text-5xl font-medium text-black"><span class="medieval-text">My</span> Encounter</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-            beatae culpa, voluptatem distinctio sapiente earum. Ullam modi
-            dignissimos, autem consequuntur ipsum excepturi totam cupiditate
-            nesciunt aspernatur fuga neque commodi inventore! Lorem, ipsum dolor
-            sit amet consectetur adipisicing elit. Itaque assumenda fugiat,
-            nesciunt culpa provident nostrum soluta a temporibus, velit eligendi
-            recusandae, enim blanditiis quidem magnam modi quae iusto fugit
-            ipsum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-            dignissimos placeat saepe eveniet dolorem veniam accusamus similique
-            aliquid ipsum, doloribus accusantium velit at ullam in debitis,
-            sequi nobis maxime numquam!
-          </p>
+          <h3 class="text-5xl font-medium text-black">
+            <span class="medieval-text">My</span> Encounter
+          </h3>
+          <p id="encounter-text" class="text-2xl font-medium text-black"></p>
         </div>
+      </div>
+      <div class="grid grid-flow-col">
         <table id="encounter-section-table"></table>
-        <!-- <div id="monster-info" class="col-span-1 row-span-6 bg-yellow-100">
-          <h3>Monsters</h3>
-        </div> -->
       </div>
 
       <div class="row-span-2 col-span-2 bg-yellow-900" id="spotify-player">
@@ -344,6 +302,30 @@
               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
               Scary Night
             </button>
+          </li>
+          <li>
+            <button
+              id="camp-music-btn"
+              data-spotify-id="spotify:episode:2vxktQyf2d619AFVa1Nxtv"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+              Camp Site
+            </button>
+          </li>
+          <li>
+            <button
+              id="boss-music-btn"
+              data-spotify-id="spotify:episode:4pPEedtCQz7m1DA9TQQ3Y2"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+              Entering Boss Fight
+            </button>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/">
+              <button
+                class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Spotify
+              </button>
+            </a>
           </li>
         </ul>
         <!-- this div element is used for iframe's player -->
