@@ -2,7 +2,6 @@
  Variables
  ***********************************************************************/
 var encounterSection = document.getElementById("encounter-creator");
-
 var addMonsterBtn = document.getElementById("add-monster-btn");
 var addMonsterInput = document.getElementById("add-monster-input");
 var monsterList = document.getElementById("monster-list");
@@ -23,6 +22,31 @@ var bossMusicBtn = document.getElementById("boss-music-btn")
  Functions
  ***********************************************************************/
 
+// Function to populate options
+function populateMonsters() {
+  var requestApi = "https://www.dnd5eapi.co/api/monsters";
+  // console.log(requestApi);
+
+  fetch(requestApi)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // console.log(data);
+
+      for (let i = 0; i < data.count; i++) {
+        // console.log(data.results[i].name);
+        var monsterList = document.createElement("option");
+        monsterList.innerHTML = data.results[i].name;
+        monsterList.value = data.results[i].index;
+        addMonsterInput.appendChild(monsterList);
+      }
+    });
+}
+
+//Populate Monsters
+populateMonsters();
+
 function addMonster(event) {
   event.preventDefault();
   console.log(addMonsterInput.value);
@@ -37,7 +61,10 @@ function addMonster(event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
+
+      var monsterTableRow = document.createElement("tr");
+      monsterTable.appendChild(monsterTableRow);
 
       var monsterTableHeader = document.createElement("th");
       monsterTableHeader.classList =
@@ -72,13 +99,55 @@ function addMonster(event) {
       monsterHealthTd.classList = "px-6 py-4";
       monsterTable.appendChild(monsterHealthTd);
 
+      // Add Hit Points
       var monsterHealthSpan = document.createElement("span");
       monsterHealthSpan.classList =
         "inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-s font-semibold text-red-600";
       monsterHealthSpan.append(data.hit_points);
       monsterHealthTd.appendChild(monsterHealthSpan);
+
+      // Add Monster Armor
+      var monsterArmorTd = document.createElement("td");
+      monsterArmorTd.classList = "px-6 py-4";
+      monsterTable.appendChild(monsterArmorTd);
+
+      // Add Hit Points
+      var monsterArmorSpan = document.createElement("span");
+      monsterArmorSpan.classList =
+        "inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-s font-semibold text-gray-600";
+      monsterArmorSpan.append(data.constitution);
+      monsterArmorTd.appendChild(monsterArmorSpan);
+
+      // Add Button to Delete
+      var monsterBtnTd = document.createElement("td");
+      monsterBtnTd.classList = "px-6 py-4";
+      monsterTable.appendChild(monsterBtnTd);
+
+      var monsterBtnDiv = document.createElement("div");
+      monsterBtnDiv.classList = "flex justify-end gap-4";
+      monsterBtnTd.appendChild(monsterBtnDiv);
+
+      var monsterBtnMain = document.createElement("button");
+      monsterBtnMain.classList =
+        "delete-btn shadow bg-red-400 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded";
+      monsterBtnMain.textContent = "Delete";
+      monsterBtnDiv.appendChild(monsterBtnMain);
     });
 }
+
+// Delete Monster Row
+function deleteBtn(event) {
+  event.preventDefault();
+  if (event.target.matches(".delete-btn")) {
+    console.log("Delete");
+    monsterTable.remove();
+  }
+}
+monsterTable.addEventListener("click", deleteBtn);
+
+/************************************************************************
+Spotify Buttons
+ ***********************************************************************/
 
 //Button Functions to change background image based on spotify choice
 function changeBgSnow(event) {
@@ -113,6 +182,9 @@ function changeBgBoss(event) {
 
 function createEncounter() {
   var encounterInfo = document.getElementById("encounter-textarea").value;
+  var encounterInfoSection = document.getElementById("encounter-text");
+
+  encounterInfoSection.innerHTML = encounterInfo;
   console.log(encounterInfo);
 
   var myTable = document.getElementById("monster-table");
@@ -123,15 +195,11 @@ function createEncounter() {
   monsterEncounterTable.innerHTML = myTable.innerHTML;
 
   //Todo: Save Encounter to Local Storage
-
-  // var encounter = {
-  //   encounterTextInput: encounterInfo,
-  // };
 }
 
 /************************************************************************
 Calls
- ***********************************************************************/
+***********************************************************************/
 
 // Add Monster Eventlistener
 addMonsterBtn.addEventListener("click", addMonster);
