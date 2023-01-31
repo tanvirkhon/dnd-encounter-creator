@@ -1,3 +1,7 @@
+/*************************************************************************
+Import Fonts
+**************************************************************************/
+
 @import url("https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap");
 
 @font-face {
@@ -27,6 +31,10 @@ body {
   overflow-x: hidden;
 }
 
+/*************************************************************************
+Header and Navigation Styling
+**************************************************************************/
+
 header {
   opacity: 88%;
   z-index: 100;
@@ -50,7 +58,7 @@ header {
 }
 
 /*************************************************************************
-3js Scene
+Hero Section Styling and Animation
 **************************************************************************/
 .scene {
   background: url(../images/DnD_Background.jpg);
@@ -67,8 +75,15 @@ canvas {
 }
 
 #hero-text {
-  /* padding-top: 30vh; */
-  opacity: 95%;
+  opacity: 92%;
+}
+
+#hero-section img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 48vh;
+  left: 47%;
 }
 
 .hero-h1 {
@@ -76,7 +91,7 @@ canvas {
   font-size: 5em;
   font-family: Dragon-Lord;
   width: 50vw;
-  top: 35vh;
+  top: 39vh;
   background-color: #f8f5de;
   background-image: linear-gradient(
     to right,
@@ -109,8 +124,7 @@ canvas {
 }
 
 .stars {
-  background: transparent
-    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+  background: transparent url(../images/Dnd_Stars.png) repeat;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -121,20 +135,13 @@ canvas {
 }
 
 /*************************************************************************
-Section Styling
+How it Works Section
 **************************************************************************/
 
 #howitworks-section {
-  min-height: 100vh;
-  padding-top: 30px;
-}
-
-#creator-section {
-  padding-top: 10vh;
-}
-
-#encounter-section {
-  padding-top: 50px;
+  height: 100vh;
+  position: static;
+  margin-top: 50px;
 }
 
 #howitworks-section .container {
@@ -161,49 +168,39 @@ Section Styling
 /*************************************************************************
 Encounter Creator
 **************************************************************************/
-#encounter-info {
-  background-color: #f8f5de;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 210, 0, 0.4),
-    rgba(200, 160, 0, 0.1) 11%,
-    rgba(0, 0, 0, 0) 35%,
-    rgba(200, 160, 0, 0.1) 65%
-  );
-  box-shadow: inset 0 0 75px rgba(255, 210, 0, 0.3),
-    inset 0 0 20px rgba(255, 210, 0, 0.4), inset 0 0 10px rgba(220, 120, 0, 0.8);
-  min-height: 30vh;
+#creator-section {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
 }
 
-#encounter-info h3 {
-  font-size: 3rem;
-  letter-spacing: 0.05em;
-  line-height: 1.8;
+#creator-section tr {
+  display: inline-flex;
 }
 
 form {
   display: block;
-  padding: 50px;
+  padding: 20px;
   color: white;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   background-color: #664034;
-  background-image: repeating-linear-gradient(
-    50deg,
-    rgba(54, 31, 31, 0.25),
-    rgba(19, 15, 15, 0.25) 10px,
-    transparent 5px,
-    transparent 88px
-  );
+  background-image: url(../images/DnD_Wood_Texture.jpg);
+  border-radius: 20px;
+  opacity: 75%;
 }
 
-.search-container {
-  width: 60vw;
-  position: relative;
+form h3{
+  color: #000;;
+}
+
+form select,
+textarea, table, button {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .autocomplete-input {
   padding: 15px 15px;
-  width: calc(100% - -24px);
+  width: 50%;
   border-radius: 1px;
   border: none;
   outline: none;
@@ -212,23 +209,17 @@ form {
   background-color: #fff;
 }
 
+#create-encounter {
+  margin-top: 40px;
+  width: 40%;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 /*************************************************************************
 Encounter Section 
 **************************************************************************/
-#spotify-player {
-  background-image: url("../images/DnD_Tavern.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  padding: 20px;
-  min-height: 30vh;
-}
-
-#spotify-player li {
-  display: inline;
-}
-
-#encounter-section-table {
+#encounter-info {
+  /* display: flex; */
   background-color: #f8f5de;
   background-image: linear-gradient(
     to right,
@@ -239,6 +230,36 @@ Encounter Section
   );
   box-shadow: inset 0 0 75px rgba(255, 210, 0, 0.3),
     inset 0 0 20px rgba(255, 210, 0, 0.4), inset 0 0 10px rgba(220, 120, 0, 0.8);
+  min-height: 20vh;
+}
+
+#encounter-info h3 {
+  font-size: 3rem;
   letter-spacing: 0.05em;
   line-height: 1.8;
+}
+
+#encounter-section-table {
+  background-color: #f8f5de;
+}
+
+#encounter-section-table tr {
+  display: inline-flex;
+}
+
+/*************************************************************************
+Spotify Section
+**************************************************************************/
+
+#spotify-player {
+  background-image: url("../images/DnD_Tavern.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 20px;
+  min-height: 50vh;
+}
+
+#spotify-player li {
+  display: inline;
 }
